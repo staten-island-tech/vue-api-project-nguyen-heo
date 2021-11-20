@@ -14,8 +14,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background: radial-gradient(circle, rgba(117,11,117,1) 0%, rgba(21,21,198,1) 58%, rgba(175,227,237,1) 96%);
+  /* color: #2c3e50;
+  background: radial-gradient(circle, rgba(117,11,117,1) 0%, rgba(21,21,198,1) 58%, rgba(175,227,237,1) 96%); */
 
 }
 
