@@ -1,5 +1,7 @@
 <template>
-  <h1>{{this.weather.current.condition.text}}</h1>
+<div>
+<h1>{{this.weather.current.condition.text}}</h1>
+</div>
 </template>
 
 <script>
