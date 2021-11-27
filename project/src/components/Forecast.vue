@@ -1,8 +1,5 @@
 <template>
 <div>
-  <body>
-    
-  </body>
   <h1 class="location">{{this.currentWeather.location.name}}</h1>
   <h1 class="today">Today's forecast: </h1>
   <div v-for="icon in icons" :key="icon">
@@ -14,16 +11,18 @@
   <h1 class="current-temp">{{this.currentWeather.current.temp_f}}°</h1>
   <h1 class="feels-like">Feels like: {{this.currentWeather.current.feelslike_f}}°</h1>
   <h1 class="rain">There will be {{this.currentWeather.current.precip_in}} inches of rain today.</h1>
-  <h1 class="next-days">The forecast for the next 3 days:</h1>
+<h1 class="next-days">The forecast for the next 3 days:</h1>
+<div class="three-day-forecast">
   <div v-for="day in this.forecast.forecast.forecastday" :key="day">
     <div v-for="icon in icons" :key="icon">
       <div v-if="icon.name === currentWeather.current.condition.text">
-        <img :src="icon.dayImage" alt="">
+        <img class="forecast-img" :src="icon.dayImage" alt="">
       </div>
     </div>
     <h1 class="date">On {{day.date}}</h1>
     <h1 class="min">The minimum temperature will be {{day.day.mintemp_f}}°.</h1>
     <h1 class="min">The maximum temperature will be {{day.day.maxtemp_f}}°.</h1>
+</div>
   </div>
 </div>
 </template>
@@ -123,7 +122,7 @@ img {
   margin: -40px 0px;
 }
 
-.location, .today, .next-days, .date {
+.location, .today, .next-days {
   margin-top: 50px;
   font-size: 27px;
   text-transform: uppercase;
@@ -134,9 +133,14 @@ img {
 
 .current-temp {
   font-size: 30px;
+  margin-top: 50px;
+  letter-spacing: 1px;
+  color: #2c3e50;
+  font-weight: bold;
+  margin: 10px;
 }
 
-.current-temp, .feels-like, .rain, .max, .min {
+.feels-like, .rain {
   margin-top: 50px;
   font-size: 25px;
   letter-spacing: 1px;
@@ -147,5 +151,32 @@ img {
 
 .next-days {
   padding-top: 70px;
+}
+
+.three-day-forecast {
+  display: flex;
+  padding: 40px;
+}
+
+.forecast-img {
+  width: 50%;
+}
+
+.max, .min {
+margin-top: 50px;
+font-size: 20px;
+letter-spacing: 1px;
+font-weight: bold;
+margin: 10px;
+color: #2c3e50; 
+}
+
+.date {
+margin-top: 50px;
+font-size: 23px;
+letter-spacing: 1px;
+font-weight: bold;
+margin: 10px;
+color: #2c3e50; 
 }
 </style>

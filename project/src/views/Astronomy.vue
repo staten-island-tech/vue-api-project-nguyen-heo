@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="astronomy">
   <div>
     <img src="../assets/weather-icons/sunrise.png" alt="">
     <h1 class="sunrise">Sunrise: {{this.currentAstro.astronomy.astro.sunrise}}</h1>
