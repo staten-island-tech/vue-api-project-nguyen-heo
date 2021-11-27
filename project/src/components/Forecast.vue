@@ -1,24 +1,29 @@
 <template>
 <div>
-  <h1>{{this.currentWeather.location.name}}</h1>
+  <body>
+    
+  </body>
+  <h1 class="location">{{this.currentWeather.location.name}}</h1>
+  <h1 class="today">Today's forecast: </h1>
   <div v-for="icon in icons" :key="icon">
     <div v-if="icon.name === currentWeather.current.condition.text">
       <img v-if="currentWeather.current.is_day === 1" :src="icon.dayImage" alt="">
       <img v-else :src="icon.nightImage" alt="">
     </div>
   </div>
-  <h1>{{this.currentWeather.current.temp_f}}</h1>
-  <h1>Feels like: {{this.currentWeather.current.feelslike_f}}</h1>
-  <h1>{{this.currentWeather.current.precip_in}} inches of rain</h1>
+  <h1 class="current-temp">{{this.currentWeather.current.temp_f}}°</h1>
+  <h1 class="feels-like">Feels like: {{this.currentWeather.current.feelslike_f}}°</h1>
+  <h1 class="rain">There will be {{this.currentWeather.current.precip_in}} inches of rain today.</h1>
+  <h1 class="next-days">The forecast for the next 3 days:</h1>
   <div v-for="day in this.forecast.forecast.forecastday" :key="day">
     <div v-for="icon in icons" :key="icon">
       <div v-if="icon.name === currentWeather.current.condition.text">
         <img :src="icon.dayImage" alt="">
       </div>
     </div>
-    <h1>{{day.date}}</h1>
-    <h1>mintemp: {{day.day.mintemp_f}}</h1>
-    <h1>maxtemp: {{day.day.maxtemp_f}}</h1>
+    <h1 class="date">On {{day.date}}</h1>
+    <h1 class="min">The minimum temperature will be {{day.day.mintemp_f}}°.</h1>
+    <h1 class="min">The maximum temperature will be {{day.day.maxtemp_f}}°.</h1>
   </div>
 </div>
 </template>
@@ -109,11 +114,38 @@ created: function(){
 <style>
 
 html {
-  background-color: burlywood;
+background: rgb(157,110,255);
+background: linear-gradient(180deg, rgba(157,110,255,1) 0%, rgba(241,111,230,1) 35%, rgba(255,164,0,1) 100%);
 }
 
 img {
-  width: 50%;
+  width: 25%;
+  margin: -40px 0px;
 }
 
+.location, .today, .next-days, .date {
+  margin-top: 50px;
+  font-size: 27px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.current-temp {
+  font-size: 30px;
+}
+
+.current-temp, .feels-like, .rain, .max, .min {
+  margin-top: 50px;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: #2c3e50;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.next-days {
+  padding-top: 70px;
+}
 </style>

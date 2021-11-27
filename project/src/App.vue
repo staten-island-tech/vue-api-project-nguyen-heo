@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link> 
       <router-link to="/astronomy">Astronomy</router-link>
     </div>
     <router-view/>
@@ -14,9 +14,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* color: #2c3e50;
-  background: radial-gradient(circle, rgba(117,11,117,1) 0%, rgba(21,21,198,1) 58%, rgba(175,227,237,1) 96%); */
-
 }
 
 #nav {
@@ -25,10 +22,15 @@
 
 #nav a {
   font-weight: bold;
+  font-size: 18px;
   color: #2c3e50;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0px 60px;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: white;
 }
 </style>

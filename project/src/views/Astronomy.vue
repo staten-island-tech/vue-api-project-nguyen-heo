@@ -2,16 +2,16 @@
 <div>
   <div>
     <img src="../assets/weather-icons/sunrise.png" alt="">
-    <h1>Sunrise: {{this.currentAstro.astronomy.astro.sunrise}}</h1>
+    <h1 class="sunrise">Sunrise: {{this.currentAstro.astronomy.astro.sunrise}}</h1>
   </div>
   <div>
     <img src='../assets/weather-icons/sunset.png' alt="">
-    <h1>Sunset: {{this.currentAstro.astronomy.astro.sunset}}</h1>
+    <h1 class="sunset">Sunset: {{this.currentAstro.astronomy.astro.sunset}}</h1>
   </div>
   <div v-for="icon in moonIcons" :key="icon">
       <div v-if="currentAstro.astronomy.astro.moon_phase === icon.name" >
         <img :src="icon.image" :alt="icon.name">
-        <h1>Moon Phase: {{icon.name}}</h1>
+        <h1 class="moon-phase">Moon Phase: {{icon.name}}</h1>
       </div>
   </div>
 </div>
@@ -96,5 +96,14 @@ created: function(){
 </script>
 
 <style>
+
+.sunrise, .sunset, .moon-phase {
+  margin-top: 50px;
+  font-size: 27px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #2c3e50;
+  font-weight: bold;
+}
 
 </style>
