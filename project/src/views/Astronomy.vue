@@ -98,7 +98,7 @@ created: function(){
 <style>
 
 .sunrise, .sunset, .moon-phase {
-  margin-top: 50px;
+  margin-top: 45px;
   font-size: 27px;
   text-transform: uppercase;
   letter-spacing: 3px;

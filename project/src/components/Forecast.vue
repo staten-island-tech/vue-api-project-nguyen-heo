@@ -1,17 +1,18 @@
 <template>
 <div>
   <h1 class="location">{{this.currentWeather.location.name}}</h1>
-  <h1 class="today">Today's forecast: </h1>
+  <h1 class="today">Today's Forecast</h1>
   <div v-for="icon in icons" :key="icon">
     <div v-if="icon.name === currentWeather.current.condition.text">
       <img v-if="currentWeather.current.is_day === 1" :src="icon.dayImage" alt="">
       <img v-else :src="icon.nightImage" alt="">
     </div>
   </div>
+  <h2>{{this.messages[Math.floor(Math.random() * messages.length)]}}</h2>
   <h1 class="current-temp">{{this.currentWeather.current.temp_f}}°</h1>
-  <h1 class="feels-like">Feels like: {{this.currentWeather.current.feelslike_f}}°</h1>
-  <h1 class="rain">There will be {{this.currentWeather.current.precip_in}} inches of rain today.</h1>
-<h1 class="next-days">The forecast for the next 3 days:</h1>
+  <h1 class="feels-like">Feels like {{this.currentWeather.current.feelslike_f}}° F</h1>
+  <h1 class="rain">{{this.currentWeather.current.precip_in}} inches of rain today</h1>
+<h1 class="next-days">3-day Forecast</h1>
 <div class="three-day-forecast">
   <div v-for="day in this.forecast.forecast.forecastday" :key="day">
     <div v-for="icon in icons" :key="icon">
@@ -19,9 +20,9 @@
         <img class="forecast-img" :src="icon.dayImage" alt="">
       </div>
     </div>
-    <h1 class="date">On {{day.date}}</h1>
-    <h1 class="min">The minimum temperature will be {{day.day.mintemp_f}}°.</h1>
-    <h1 class="min">The maximum temperature will be {{day.day.maxtemp_f}}°.</h1>
+    <h1 class="date">{{day.date}}</h1>
+    <h1 class="min">Minimum temperature: {{day.day.mintemp_f}}°</h1>
+    <h1 class="min">Maximum temperature: {{day.day.maxtemp_f}}°</h1>
 </div>
   </div>
 </div>
@@ -71,8 +72,33 @@ export default {
           dayImage: require('../assets/weather-icons/rain-cloud.png'),
           nightImage: require('../assets/weather-icons/rain-cloud.png')
         },
-        
-      ]
+      ],
+      messages: [
+        "You look like you would have nine toes.",
+        "Who else thinks they faked the moon landing?",
+        "You smell nice.",
+        "Never stop being you!",
+        "You look like a victim of natural selection.",
+        "It's not a good day because you look like shit today.",
+        "I heard the cold burns off fat, lucky you.",
+        "Enjoy the cold weather, shitbag!",
+        "You look like a victim.",
+        "The Earth is flat. Trust me bro.",
+        "You're the Staten Island of your friend group.",
+        "You're so full of shit you need a laxative to talk.",
+        "I take a shot of vodka everytime I have to look at you.",
+        "I did NOT know they made idiots this fat!",
+        "You look like you wouldn't be allowed within 30 feet of a school.",
+        "Take some time to breathe. Slow down. Appreciate and love yourself for who YOU are.",
+        "I don't think they bullied you enough in middle school.",
+        "It's okay to make mistakes. Everyone does. No one can blame you.",
+        "Don't compare yourself to anyone else. Just focus on being the best version of yourself.",
+        "Each day comes bearing its gifts. Untie the ribbon.",
+        "Try to be a rainbow in someone else's cloud.",
+        "The greatest mistake you can make is to be continually fearing that you'll make one.",
+        "Shoot for the ground because then you'll never miss!",
+        "I feel like you ate crayons as a kid."
+      ],
     } 
 },
 created: function(){
@@ -113,13 +139,14 @@ created: function(){
 <style>
 
 html {
-background: rgb(157,110,255);
 background: linear-gradient(180deg, rgba(157,110,255,1) 0%, rgba(241,111,230,1) 35%, rgba(255,164,0,1) 100%);
+background-repeat: round;
+
 }
 
 img {
-  width: 25%;
-  margin: -40px 0px;
+  width: 30%;
+  margin: -50px 0px;
 }
 
 .location, .today, .next-days {
