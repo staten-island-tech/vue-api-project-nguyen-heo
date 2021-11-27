@@ -8,7 +8,7 @@
       <img v-else :src="icon.nightImage" alt="">
     </div>
   </div>
-  <h2>{{this.messages[Math.floor(Math.random() * messages.length)]}}</h2>
+  <h2 class="message">{{this.messages[Math.floor(Math.random() * messages.length)]}}</h2>
   <h1 class="current-temp">{{this.currentWeather.current.temp_f}}°</h1>
   <h1 class="feels-like">Feels like {{this.currentWeather.current.feelslike_f}}° F</h1>
   <h1 class="rain">{{this.currentWeather.current.precip_in}} inches of rain today</h1>
@@ -158,8 +158,14 @@ img {
   font-weight: bold;
 }
 
+.message {
+  font-size: 25px;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
 .current-temp {
-  font-size: 30px;
+  font-size: 25px;
   margin-top: 50px;
   letter-spacing: 1px;
   color: #2c3e50;
