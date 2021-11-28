@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <div id="nav">
       <router-link to="/">Home</router-link> 
       <router-link to="/astronomy">Astronomy</router-link>
