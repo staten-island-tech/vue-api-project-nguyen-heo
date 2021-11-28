@@ -97,7 +97,8 @@ export default {
         "Try to be a rainbow in someone else's cloud.",
         "The greatest mistake you can make is to be continually fearing that you'll make one.",
         "Shoot for the ground because then you'll never miss!",
-        "I feel like you ate crayons as a kid."
+        "I feel like you ate crayons as a kid.",
+        "Here's your weather. Or you can, you know, maybe look outside and see for yourself."
       ],
     } 
 },
